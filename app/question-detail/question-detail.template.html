@@ -5,7 +5,7 @@
 <ul class="answers">
     <li ng-repeat="answer in $ctrl.question.answers">
         <p>{{answer.content}}</p>
-        <p>By {{anwser.author}} on {{answer.createdOn}}</p>
-        <p>Last modified: {{answer.lastModified}}</p>
+        <p>By {{anwser.author}} on {{answer.createdOn * 1000 | date:"MMM dd yyyy 'at' HH:mm"}}</p>
+        <p>Last modified: {{answer.lastModified * 1000 | date:"MMM dd yyyy 'at' HH:mm"}}</p>
     </li>
 </ul>

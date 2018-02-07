@@ -4,31 +4,31 @@
         "title": "Question 1",
         "descr": "Description of question 1",
         "author": "author1",
-        "lastModified": "06/02/2018",
+        "lastModified": "1517921215",
         "votes": 5,
         "answers": [
             {
                 "id": "answer1",
                 "author": "author1",
                 "content": "Answer 1",
-                "createdOn": "06/02/2018",
-                "lastModified": "07/02/2018",
+                "createdOn": "1517921215",
+                "lastModified": "1518007615",
                 "votes": 5
             },
             {
                 "id": "answer2",
                 "author": "author2",
                 "content": "Answer 2",
-                "createdOn": "06/02/2018",
-                "lastModified": "07/02/2018",
+                "createdOn": "1517921215",
+                "lastModified": "1518007615",
                 "votes": 3
             },
             {
                 "id": "answer3",
                 "author": "author3",
                 "content": "Answer 3",
-                "createdOn": "06/02/2018",
-                "lastModified": "07/02/2018",
+                "createdOn": "1517921215",
+                "lastModified": "1518007615",
                 "votes": -1
             }
         ]
@@ -38,31 +38,31 @@
         "title": "Question 2",
         "descr": "Description of question 2",
         "author": "author2",
-        "lastModified": "03/02/2018",
+        "lastModified": "1517662015",
         "votes": -2,
         "answers": [
             {
                 "id": "answer1",
                 "author": "author1",
                 "content": "Answer 1",
-                "createdOn": "06/02/2018",
-                "lastModified": "07/02/2018",
+                "createdOn": "1517921215",
+                "lastModified": "1518007615",
                 "votes": 5
             },
             {
                 "id": "answer2",
                 "author": "author2",
                 "content": "Answer 2",
-                "createdOn": "06/02/2018",
-                "lastModified": "07/02/2018",
+                "createdOn": "1517921215",
+                "lastModified": "1518007615",
                 "votes": 3
             },
             {
                 "id": "answer3",
                 "author": "author3",
                 "content": "Answer 3",
-                "createdOn": "06/02/2018",
-                "lastModified": "07/02/2018",
+                "createdOn": "1517921215",
+                "lastModified": "1518007615",
                 "votes": -1
             }
         ]
@@ -72,31 +72,31 @@
         "title": "Question 3",
         "descr": "Description of question 3",
         "author": "author3",
-        "lastModified": "05/02/2018",
+        "lastModified": "1517834815",
         "votes": 3,
         "answers": [
             {
                 "id": "answer1",
                 "author": "author1",
                 "content": "Answer 1",
-                "createdOn": "06/02/2018",
-                "lastModified": "07/02/2018",
+                "createdOn": "1517921215",
+                "lastModified": "1518007615",
                 "votes": 5
             },
             {
                 "id": "answer2",
                 "author": "author2",
                 "content": "Answer 2",
-                "createdOn": "06/02/2018",
-                "lastModified": "07/02/2018",
+                "createdOn": "1517921215",
+                "lastModified": "1518007615",
                 "votes": 3
             },
             {
                 "id": "answer3",
                 "author": "author3",
                 "content": "Answer 3",
-                "createdOn": "06/02/2018",
-                "lastModified": "07/02/2018",
+                "createdOn": "1517921215",
+                "lastModified": "1518007615",
                 "votes": -1
             }
         ]
