@@ -31,6 +31,7 @@ describe('Amaflow Application', function() {
       var queryField = element(by.model('$ctrl.query'));
       var orderSelect = element(by.model('$ctrl.orderProp'));
       var titleOption = orderSelect.element(by.css('option[value="title"]'));
+      var votesOption = orderSelect.element(by.css('option[value="-votes"]'));
       var questionTitleColumn = element.all(by.repeater('question in $ctrl.questions').column('question.title'));
 
       function getTitles() {
@@ -53,6 +54,14 @@ describe('Amaflow Application', function() {
         'Question 1',
         'Question 2',
         'Question 3'
+      ]);
+
+      votesOption.click();
+
+      expect(getTitles()).toEqual([
+        'Question 1',
+        'Question 3',
+        'Question 2'
       ]);
     });
 
