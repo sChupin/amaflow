@@ -17,7 +17,9 @@ describe('questionList', function() {
     }));
 
     it('should create a question list model with 2 questions fetched with `$http`', function() {
-      expect(ctrl.questions).toBeUndefined();
+      jasmine.addCustomEqualityTester(angular.equals);
+
+      expect(ctrl.questions).toEqual([]);
 
       $httpBackend.flush();  
       expect(ctrl.questions.length).toBe(2);

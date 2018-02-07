@@ -5,16 +5,17 @@ angular.
   module('questionDetail').
   component('questionDetail', {
     templateUrl: 'question-detail/question-detail.template.html',
-    controller: ['$http', '$routeParams',
-      function QuestionDetailController($http, $routeParams) {
+    controller: ['$routeParams', 'Question',
+      function QuestionDetailController($routeParams, Question) {
         var self = this;
+        // For latter use
+        //self.question = Question.get({questionId: $routeParams.questionId});
 
         // don't use $routeParams.questionId as database not configured yet
         // will be replaced by REST call to /questions/$routeParams.questionId later
         // only the corresponding question will be fetched from server/db
-        $http.get('questions/questions.json').then(function(response) {
-          self.question = response.data.filter(function(question) {
-            console.log($routeParams.questionId);
+        Question.query(function(questions) {
+          self.question = questions.filter(function(question) {
             return question.id == $routeParams.questionId;
           })[0];
         });

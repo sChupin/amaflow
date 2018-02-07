@@ -19,6 +19,8 @@ describe('questionDetail', function() {
     }));
 
     it('should fetch the question details', function() {
+      jasmine.addCustomEqualityTester(angular.equals);
+
       expect(ctrl.question).toBeUndefined();
 
       $httpBackend.flush();
