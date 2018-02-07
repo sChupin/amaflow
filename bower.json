@@ -1,0 +1,12 @@
+{
+  "name": "amaflow",
+  "description": "A mini stackoverflow-like app",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-route": "1.5.x",
+    "bootstrap": "3.3.x"
+  }
+}

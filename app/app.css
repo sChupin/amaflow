@@ -1,0 +1,12 @@
+body {
+  padding-top: 20px;
+}
+
+.questions {
+  list-style: none;
+}
+
+.questions li {
+  clear: both;
+  padding-top: 15px;
+}

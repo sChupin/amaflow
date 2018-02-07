@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Sidebar -->
+    <div class="col-md-2">
+
+      <p>
+        Search:
+        <input ng-model="$ctrl.query">
+      </p>
+
+      <p>
+        Sort by:
+        <select ng-model="$ctrl.orderProp">
+          <option value="title">Alphabetical</option>
+          <option value="lastModified">Last modified</option>
+        </select>
+      </p>
+      
+    </div>
+
+    <!-- Question list -->
+    <div class="col-md-10">
+      <ul class="questions">
+        <li ng-repeat="question in $ctrl.questions | filter: { title: $ctrl.query } | orderBy: $ctrl.orderProp">
+          <a href="#!questions/{{question.id}}">{{question.title}}</a>
+          <p>{{question.lastModified}}</p>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
