@@ -1,0 +1,11 @@
+<h1>{{$ctrl.question.title}}</h1>
+
+<p>{{$ctrl.question.description}}</p>
+
+<ul class="answers">
+    <li ng-repeat="answer in $ctrl.question.answers">
+        <p>{{answer.content}}</p>
+        <p>By {{anwser.author}} on {{answer.createdOn}}</p>
+        <p>Last modified: {{answer.lastModified}}</p>
+    </li>
+</ul>

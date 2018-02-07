@@ -81,8 +81,8 @@ describe('Amaflow Application', function() {
       browser.get('index#!/questions/question1');
     });
 
-    it('should display placeholder page with `questionId`', function() {
-      expect(element(by.binding('$ctrl.questionId')).getText()).toBe('question1');
+    it('should display the `questionId` detail page', function() {
+      expect(element(by.binding('$ctrl.question.title')).getText()).toBe('Question 1');
     });
 
   });
