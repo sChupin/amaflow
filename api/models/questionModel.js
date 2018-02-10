@@ -3,6 +3,21 @@ var mongoose = require('mongoose');
 var timestamps = require('mongoose-timestamp');
 var Schema = mongoose.Schema;
 
+var AnswerSchema = new Schema({
+    author: {
+        type: String
+    },
+    content: {
+        type: String
+    },
+    votes: {
+        type: Number
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
+});
 
 var QuestionSchema = new Schema({
   title: {
@@ -17,26 +32,7 @@ var QuestionSchema = new Schema({
   votes: {
       type: Number
   },
-  answers: {
-      type: [{
-            author: {
-                type: String
-            },
-            content: {
-                type: String
-            },
-            createdOn: {
-                type: Date
-            },
-            lastModified: {
-                type: Date
-            },
-            votes: {
-                type: Number
-            }
-      }]
-      //type: [{type: Schema.ObjectId, ref: 'Answer'}]
-  }
+  answers: [AnswerSchema]
 });
 
 QuestionSchema.plugin(timestamps);
