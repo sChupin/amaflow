@@ -5,6 +5,8 @@
     <title>Amaflow</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="app.css" />
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -17,10 +19,13 @@
     <script src="question-list/question-list.component.js"></script>
     <script src="question-detail/question-detail.module.js"></script>
     <script src="question-detail/question-detail.component.js"></script>
+    <script src="create-question/create-question.module.js"></script>
+    <script src="create-question/create-question.component.js"></script>
   </head>
   <body>
+    <ng-include src="'/navbar.html'"></ng-include>
 
-    <div ng-view></div>
+    <div ng-view class="container"></div>
 
   </body>
 </html>

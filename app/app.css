@@ -1,12 +1,43 @@
+@media (min-width: 1200px) {
+  .container{
+      max-width: 1000px;
+  }
+}
+
 body {
+  padding-top: 70px;
+}
+
+.subheader {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  height: 60px;
+}
+
+.subheader div {
+  height: 100%;
+}
+
+.subheader .form-inline {
   padding-top: 20px;
 }
 
 .questions {
+  padding: 0px;
+}
+
+.questions ul {
   list-style: none;
+  padding-left: 0px;
 }
 
 .questions li {
   clear: both;
   padding-top: 15px;
+  padding-left: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+.questions li a {
+  font-size: 16px;
 }

@@ -1,34 +1,39 @@
 <div class="container-fluid">
   <div class="row">
 
-    <!-- Sidebar -->
-    <div class="col-md-2">
-
-      <p>
-        Search:
-        <input ng-model="$ctrl.query">
-      </p>
-
-      <p>
-        Sort by:
-        <select ng-model="$ctrl.orderProp">
-          <option value="title">Alphabetical</option>
-          <option value="lastModified">Last modified</option>
-          <option value="-votes">Votes</option>
-        </select>
-      </p>
-      
+    <div class="subheader col-md-12">
+      <div class="col-md-2">
+        <h3>Questions</h3>
+      </div>
+      <div class="col-md-offset-4 col-md-6">
+          <div class="form-inline">
+            <div class="form-group col-md-6">
+              <input class="form-control" ng-model="$ctrl.query" placeholder="Filter...">
+            </div>
+          
+            <div class="form-group col-md-2">
+              <select class="form-control" ng-model="$ctrl.orderProp">
+                  <option value="title">Alphabetical</option>
+                  <option value="lastModified">Last modified</option>
+                  <option value="-votes">Votes</option>
+                </select>
+            </div>
+          </div>
+      </div>
     </div>
 
+  </div>
+
+  <div class="row">
     <!-- Question list -->
-    <div class="col-md-10">
-      <ul class="questions">
+    <div class="questions col-md-12">
+      <ul>
         <li ng-repeat="question in $ctrl.questions | filter: { title: $ctrl.query } | orderBy: $ctrl.orderProp">
           <a href="#!questions/{{question.id}}">{{question.title}}</a>
           <p>{{question.lastModified * 1000 | date:"MMM dd yyyy 'at' HH:mm"}}</p>
         </li>
       </ul>
     </div>
-
   </div>
+
 </div>
