@@ -16,6 +16,9 @@ var QuestionSchema = new Schema({
   author: {
       type: String
   },
+  createdOn: {
+    type: Date
+  },
   lastModified: {
       type: Date
   },
