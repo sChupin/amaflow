@@ -12,11 +12,15 @@ angular.
       $scope.createQuestion = function() {
         // Get tags
         var tags = $scope.tags.split(/\s*;\s*/);
-        // Question.save();
-        console.log("Create new question");
-        console.log("Title = " + $scope.title);
-        console.log("Content = " + $scope.content);
-        console.log("Tags = " + JSON.stringify(tags));
+        var question = new Question();
+        question.title = $scope.title;
+        question.descr = $scope.content;
+        question.author = 'author';
+        question.createdOn = 1517921215000;
+        question.lastModified = 1517921215000;
+        question.votes = 0;
+        question.answers = [];
+        Question.save(question);
       }
     }]
   });

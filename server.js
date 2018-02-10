@@ -13,6 +13,7 @@ mongoose.connect('mongodb://localhost/amaflowdb');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static('app'));
 
 var routes = require('./api/routes/questionRoutes');
 routes(app); //register the route

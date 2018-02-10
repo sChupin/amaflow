@@ -17,7 +17,7 @@
             <p class="question">{{$ctrl.question.descr}}</p>
             <div class="edit-info">
                 <span>By <span class="fake-link">{{$ctrl.question.author}}</span></span>
-                <span>on {{$ctrl.question.createdOn *1000 | date:"MMM dd yyyy 'at' HH:mm"}}</span>
+                <span>on {{$ctrl.question.createdAt | date:"MMM dd yyyy 'at' HH:mm"}}</span>
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
                         <div class="col-md-11">
                             <p class="answer">{{answer.content}}</p>
                             <div class="edit-info">
-                                <span>By <span class="fake-link">{{answer.author}}</span> on {{answer.createdOn * 1000 | date:"MMM dd yyyy 'at' HH:mm"}}</span>
+                                <span>By <span class="fake-link">{{answer.author}}</span> on {{answer.createdAt | date:"MMM dd yyyy 'at' HH:mm"}}</span>
                             </div>
                         </div>
                     </div>

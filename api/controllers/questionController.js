@@ -21,7 +21,7 @@ exports.createQuestion = function(req, res) {
 };
 
 exports.getQuestion = function(req, res) {
-  Question.findOne({ id: req.params.questionId }, function(err, question) {
+  Question.findById(req.params.questionId, function(err, question) {
     if (err)
       res.send(err);
     res.json(question);
@@ -29,7 +29,7 @@ exports.getQuestion = function(req, res) {
 };
 
 exports.editQuestion = function(req, res) {
-  Question.findOneAndUpdate({ id: req.params.questionId }, req.body, { new: true }, function(err, question) {
+  Question.findOneAndUpdate({ _id: req.params.questionId }, req.body, { new: true }, function(err, question) {
     if (err)
       res.send(err);
     res.json(question);
@@ -38,7 +38,7 @@ exports.editQuestion = function(req, res) {
 
 exports.deleteQuestion = function(req, res) {
   Question.remove({
-    id: req.params.questionId
+    _id: req.params.questionId
   }, function(err, question) {
     if (err)
       res.send(err);
@@ -47,7 +47,7 @@ exports.deleteQuestion = function(req, res) {
 };
 
 exports.createAnswer = function(req, res) {
-    Question.findOneAndUpdate({ id: req.params.questionId }, { $push: { answers: req.body } }, { new: true }, function(err, question) {
+    Question.findOneAndUpdate({ _id: req.params.questionId }, { $push: { answers: req.body } }, { new: true }, function(err, question) {
       if (err)
         res.send(err);
       res.json(question);
@@ -56,7 +56,7 @@ exports.createAnswer = function(req, res) {
 
 exports.editAnswer = function(req, res) {
   // TODO
-  Question.findOneAndUpdate({ id: req.params.questionId }, { $pull: { answers: { id: req.params.answerId } } }, {new: true }, function(err, question) {
+  Question.findOneAndUpdate({ _id: req.params.questionId }, { $pull: { answers: { _id: req.params.answerId } } }, {new: true }, function(err, question) {
     if (err)
       res.send(err);
     res.json(question);
@@ -64,7 +64,7 @@ exports.editAnswer = function(req, res) {
 }
 
 exports.deleteAnswer = function(req, res) {
-  Question.findOneAndUpdate({ id: req.params.questionId }, { $pull: { answers: { id: req.params.answerId } } }, {new: true }, function(err, question) {
+  Question.findOneAndUpdate({ _id: req.params.questionId }, { $pull: { answers: { _id: req.params.answerId } } }, {new: true }, function(err, question) {
     if (err)
       res.send(err);
     res.json(question);

@@ -1,12 +1,10 @@
 'use strict';
 var mongoose = require('mongoose');
+var timestamps = require('mongoose-timestamp');
 var Schema = mongoose.Schema;
 
 
 var QuestionSchema = new Schema({
-  id: {
-    type: String
-  },
   title: {
     type: String
   },
@@ -16,20 +14,11 @@ var QuestionSchema = new Schema({
   author: {
       type: String
   },
-  createdOn: {
-    type: Date
-  },
-  lastModified: {
-      type: Date
-  },
   votes: {
       type: Number
   },
   answers: {
       type: [{
-            id: {
-                type: String
-            },
             author: {
                 type: String
             },
@@ -49,5 +38,7 @@ var QuestionSchema = new Schema({
       //type: [{type: Schema.ObjectId, ref: 'Answer'}]
   }
 });
+
+QuestionSchema.plugin(timestamps);
 
 module.exports = mongoose.model('Questions', QuestionSchema);
