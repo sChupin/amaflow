@@ -8,11 +8,15 @@ angular.
     controller: ['$scope', 'Question', function CreateQuestionController($scope, Question) {
       $scope.title = "";
       $scope.content = "";
+      $scope.tags = "";
       $scope.createQuestion = function() {
-          // Question.save();
-          console.log("Create new question");
-          console.log("Title = " + $scope.title);
-          console.log("Content = " + $scope.content);
+        // Get tags
+        var tags = $scope.tags.split(/\s*;\s*/);
+        // Question.save();
+        console.log("Create new question");
+        console.log("Title = " + $scope.title);
+        console.log("Content = " + $scope.content);
+        console.log("Tags = " + JSON.stringify(tags));
       }
     }]
   });
