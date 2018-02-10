@@ -8,7 +8,12 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="votes col-md-1">
+            <span class="glyphicon glyphicon-triangle-top"></span><br>
+            <span class="vote-nb">{{$ctrl.question.votes}}</span><br>
+            <span class="glyphicon glyphicon-triangle-bottom"></span>
+        </div>
+        <div class="col-md-11">
             <p class="question">{{$ctrl.question.descr}}</p>
             <div class="edit-info">
                 <span>By <span class="fake-link">{{$ctrl.question.author}}</span></span>
@@ -29,9 +34,18 @@
         <div class="answers col-md-12">
             <ul>
                 <li ng-repeat="answer in $ctrl.question.answers">
-                    <p class="answer">{{answer.content}}</p>
-                    <div class="edit-info">
-                        <span>By <span class="fake-link">{{answer.author}}</span> on {{answer.createdOn * 1000 | date:"MMM dd yyyy 'at' HH:mm"}}</span>
+                    <div class="row">
+                        <div class="votes col-md-1">
+                            <span class="glyphicon glyphicon-triangle-top"></span><br>
+                            <span class="vote-nb">{{$ctrl.question.votes}}</span><br>
+                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                        </div>
+                        <div class="col-md-11">
+                            <p class="answer">{{answer.content}}</p>
+                            <div class="edit-info">
+                                <span>By <span class="fake-link">{{answer.author}}</span> on {{answer.createdOn * 1000 | date:"MMM dd yyyy 'at' HH:mm"}}</span>
+                            </div>
+                        </div>
                     </div>
                 </li>
             </ul>
