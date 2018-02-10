@@ -6,6 +6,7 @@
 
 body {
   padding-top: 70px;
+  padding-bottom: 50px;
 }
 
 .subheader {
@@ -16,6 +17,10 @@ body {
 
 .subheader div {
   height: 100%;
+}
+
+.subheader div h4 {
+  padding-top: 20px;
 }
 
 .subheader .form-inline {
@@ -40,4 +45,43 @@ body {
 
 .questions li a {
   font-size: 16px;
+}
+
+.question {
+  border: 1px solid #ddd;
+  margin: 5px;
+  padding: 15px;
+}
+
+.answers {
+  padding: 0px;
+}
+
+.answers ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.answers li {
+  clear: both;
+  padding-top: 15px;
+  padding-left: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+div .edit-info {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.fake-link {
+  color: #337ab7;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.answer {
+  border: 1px solid #ddd;
+  margin: 5px;
+  padding: 15px;
 }

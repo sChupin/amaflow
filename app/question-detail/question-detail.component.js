@@ -5,9 +5,10 @@ angular.
   module('questionDetail').
   component('questionDetail', {
     templateUrl: 'question-detail/question-detail.template.html',
-    controller: ['$routeParams', 'Question',
-      function QuestionDetailController($routeParams, Question) {
+    controller: ['$scope', '$routeParams', 'Question',
+      function QuestionDetailController($scope, $routeParams, Question) {
         var self = this;
+        $scope.answerContent = "";
         // For latter use
         //self.question = Question.get({questionId: $routeParams.questionId});
 
@@ -19,6 +20,11 @@ angular.
             return question.id == $routeParams.questionId;
           })[0];
         });
+
+        $scope.createAnswer = function() {
+          console.log("Create answer");
+          console.log("Content = '" + $scope.answerContent + "'");
+        }
       }
     ]
   });

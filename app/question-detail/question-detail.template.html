@@ -1,11 +1,59 @@
-<h1>{{$ctrl.question.title}}</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="subheader col-md-12">
+            <div class="col-md2">
+                <h3>{{$ctrl.question.title}}</h3>
+            </div>
+        </div>
+    </div>
 
-<p>{{$ctrl.question.description}}</p>
+    <div class="row">
+        <div class="col-md-12">
+            <p class="question">{{$ctrl.question.descr}}</p>
+            <div class="edit-info">
+                <span>By <span class="fake-link">{{$ctrl.question.author}}</span></span>
+                <span>on {{$ctrl.question.createdOn *1000 | date:"MMM dd yyyy 'at' HH:mm"}}</span>
+            </div>
+        </div>
+    </div>
 
-<ul class="answers">
-    <li ng-repeat="answer in $ctrl.question.answers">
-        <p>{{answer.content}}</p>
-        <p>By {{anwser.author}} on {{answer.createdOn * 1000 | date:"MMM dd yyyy 'at' HH:mm"}}</p>
-        <p>Last modified: {{answer.lastModified * 1000 | date:"MMM dd yyyy 'at' HH:mm"}}</p>
-    </li>
-</ul>
+    <div class="row">
+        <div class="subheader col-md-12">
+            <div class="col-md2">
+                <h4>{{$ctrl.question.answers.length}} Answers</h4>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="answers col-md-12">
+            <ul>
+                <li ng-repeat="answer in $ctrl.question.answers">
+                    <p class="answer">{{answer.content}}</p>
+                    <div class="edit-info">
+                        <span>By <span class="fake-link">{{answer.author}}</span> on {{answer.createdOn * 1000 | date:"MMM dd yyyy 'at' HH:mm"}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="subheader col-md-12">
+            <h3>Your answer</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-horizontal" ng-submit="createAnswer()">
+                <div class="form-group col-md-12">
+                    <div>
+                        <textarea class="form-control" rows="10" ng-model="answerContent" ng-trim="false" required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Post your answer</button>
+            </form>
+        </div>
+    </div>
+</div>
