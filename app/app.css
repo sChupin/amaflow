@@ -103,3 +103,9 @@ div .edit-info {
 .votes span.vote-nb {
   padding-left: 1px;
 }
+
+.delete {
+  float: right;
+  padding-top: 30px;
+  cursor: pointer;
+}

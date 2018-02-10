@@ -1,8 +1,13 @@
 <div class="container-fluid">
     <div class="row">
         <div class="subheader col-md-12">
-            <div class="col-md2">
+            <div class="col-md-10">
                 <h3>{{$ctrl.question.title}}</h3>
+            </div>
+            <div class="col-md-2">
+                <div class="delete">
+                    <span class="glyphicon glyphicon-trash" title="Delete this question" ng-click="deleteQuestion()"></span>
+                </div>
             </div>
         </div>
     </div>
