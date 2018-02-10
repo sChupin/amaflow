@@ -6,4 +6,9 @@ angular.
     function($resource) {
       return $resource('questions/:questionId');
     }
+  ]).
+  factory('Answer', ['$resource',
+    function($resource) {
+      return $resource('questions/:questionId/answers/:answerId');
+    }
   ]);

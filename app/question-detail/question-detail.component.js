@@ -5,16 +5,21 @@ angular.
   module('questionDetail').
   component('questionDetail', {
     templateUrl: 'question-detail/question-detail.template.html',
-    controller: ['$scope', '$location', '$routeParams', 'Question',
-      function QuestionDetailController($scope, $location, $routeParams, Question) {
+    controller: ['$scope', '$location', '$route', '$routeParams', 'Question', 'Answer',
+      function QuestionDetailController($scope, $location, $route, $routeParams, Question, Answer) {
         var self = this;
         $scope.answerContent = "";
         
         self.question = Question.get({questionId: $routeParams.questionId});
         
         $scope.createAnswer = function() {
-          console.log("Create answer");
-          console.log("Content = '" + $scope.answerContent + "'");
+          var answer = new Answer();
+          answer.content = $scope.answerContent;
+          answer.author = 'author';
+          answer.votes = 0;
+          Answer.save({ questionId: self.question._id }, answer, function() {
+            $route.reload();
+          });
         }
 
         $scope.deleteQuestion = function() {

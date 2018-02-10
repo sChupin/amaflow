@@ -10,9 +10,11 @@ module.exports = function(app) {
 
   app.route('/questions/:questionId')
     .get(questionController.getQuestion)
-    .post(questionController.createAnswer)
     .put(questionController.editQuestion)
     .delete(questionController.deleteQuestion);
+
+  app.route('/questions/:questionId/answers')
+  .post(questionController.createAnswer);
   
   app.route('/questions/:questionId/answers/:answerId')
     .put(questionController.editAnswer)
