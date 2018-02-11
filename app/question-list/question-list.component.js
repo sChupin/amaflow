@@ -8,6 +8,6 @@ angular.
     controller: ['Question', function QuestionListController(Question) {
       var self = this;
       this.questions = Question.query();
-      this.orderProp = 'updatedAt';
+      this.orderProp = '-updatedAt';
     }]
   });
