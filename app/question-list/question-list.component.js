@@ -5,12 +5,9 @@ angular.
   module('questionList').
   component('questionList', {
     templateUrl: 'question-list/question-list.template.html',
-    controller: ['$http', function QuestionListController($http) {
+    controller: ['Question', function QuestionListController(Question) {
       var self = this;
-      self.orderProp = 'lastModified';
-
-      $http.get('questions/questions.json').then(function(response) {
-        self.questions = response.data;
-      });
+      this.questions = Question.query();
+      this.orderProp = '-updatedAt';
     }]
   });

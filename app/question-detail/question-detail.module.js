@@ -2,5 +2,6 @@
 
 // Define the `questionDetail` module
 angular.module('questionDetail', [
-  'ngRoute'
+  'ngRoute',
+  'core.question'
 ]);

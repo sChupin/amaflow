@@ -1,4 +1,4 @@
 'use strict';
 
 // Define the `questionList` module
-angular.module('questionList', []);
+angular.module('questionList', ['core.question']);

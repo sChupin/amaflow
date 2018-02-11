@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="subheader col-md-12">
+            <div class="col-md-10">
+                <h3>{{$ctrl.question.title}}</h3>
+            </div>
+            <div class="col-md-2">
+                <div class="delete">
+                    <span class="glyphicon glyphicon-trash" title="Delete this question" ng-click="deleteQuestion()"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="votes col-md-1">
+            <span class="glyphicon glyphicon-triangle-top"></span><br>
+            <span class="vote-nb">{{$ctrl.question.votes}}</span><br>
+            <span class="glyphicon glyphicon-triangle-bottom"></span>
+        </div>
+        <div class="col-md-11">
+            <p class="question">{{$ctrl.question.descr}}</p>
+            <div class="edit-info">
+                <span>By <span class="fake-link">{{$ctrl.question.author}}</span></span>
+                <span>on {{$ctrl.question.createdAt | date:"MMM dd yyyy 'at' HH:mm"}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="subheader col-md-12">
+            <div class="col-md2">
+                <h4>{{$ctrl.question.answers.length}} Answers</h4>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="answers col-md-12">
+            <ul>
+                <li ng-repeat="answer in $ctrl.question.answers">
+                    <div class="row">
+                        <div class="votes col-md-1">
+                            <span class="glyphicon glyphicon-triangle-top"></span><br>
+                            <span class="vote-nb">{{answer.votes}}</span><br>
+                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                        </div>
+                        <div class="col-md-11">
+                            <p class="answer">{{answer.content}}</p>
+                            <div class="edit-info">
+                                <span>By <span class="fake-link">{{answer.author}}</span> on {{answer.createdAt | date:"MMM dd yyyy 'at' HH:mm"}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="subheader col-md-12">
+            <h3>Your answer</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-horizontal" ng-submit="createAnswer()">
+                <div class="form-group col-md-12">
+                    <div>
+                        <textarea class="form-control" rows="10" ng-model="answerContent" ng-trim="false" required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Post your answer</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -10,6 +10,9 @@ angular.
         when('/questions', {
           template: '<question-list></question-list>'
         }).
+        when('/questions/create', {
+          template: '<create-question></create-question>'
+        }).
         when('/questions/:questionId', {
           template: '<question-detail></question-detail>'
         }).

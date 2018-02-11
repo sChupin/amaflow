@@ -1,12 +1,111 @@
+@media (min-width: 1200px) {
+  .container{
+      max-width: 1000px;
+  }
+}
+
 body {
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
+
+.subheader {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  height: 60px;
+}
+
+.subheader div {
+  height: 100%;
+}
+
+.subheader div h4 {
+  padding-top: 20px;
+}
+
+.subheader .form-inline {
   padding-top: 20px;
 }
 
 .questions {
+  padding: 0px;
+}
+
+.questions ul {
   list-style: none;
+  padding-left: 0px;
 }
 
 .questions li {
   clear: both;
   padding-top: 15px;
+  padding-left: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+.questions li a {
+  font-size: 16px;
+}
+
+.question {
+  border: 1px solid #ddd;
+  margin: 5px;
+  padding: 15px;
+}
+
+.answers {
+  padding: 0px;
+}
+
+.answers ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.answers li {
+  clear: both;
+  padding-top: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+div .edit-info {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.fake-link {
+  color: #337ab7;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.answer {
+  border: 1px solid #ddd;
+  margin: 5px;
+  padding: 15px;
+}
+
+.votes {
+  text-align: center;
+  padding-right: 0px;
+  font-size: 20px;
+  color: #6a737c;
+}
+
+.votes span.glyphicon {
+  cursor: pointer;
+}
+
+.votes span.glyphicon-triangle-bottom {
+  padding-top: 5px;
+}
+
+.votes span.vote-nb {
+  padding-left: 1px;
+}
+
+.delete {
+  float: right;
+  padding-top: 30px;
+  cursor: pointer;
 }

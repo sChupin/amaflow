@@ -31,6 +31,7 @@ describe('Amaflow Application', function() {
       var queryField = element(by.model('$ctrl.query'));
       var orderSelect = element(by.model('$ctrl.orderProp'));
       var titleOption = orderSelect.element(by.css('option[value="title"]'));
+      var votesOption = orderSelect.element(by.css('option[value="-votes"]'));
       var questionTitleColumn = element.all(by.repeater('question in $ctrl.questions').column('question.title'));
 
       function getTitles() {
@@ -54,6 +55,14 @@ describe('Amaflow Application', function() {
         'Question 2',
         'Question 3'
       ]);
+
+      votesOption.click();
+
+      expect(getTitles()).toEqual([
+        'Question 1',
+        'Question 3',
+        'Question 2'
+      ]);
     });
 
     it('should render question specific links', function() {
@@ -72,8 +81,8 @@ describe('Amaflow Application', function() {
       browser.get('index#!/questions/question1');
     });
 
-    it('should display placeholder page with `questionId`', function() {
-      expect(element(by.binding('$ctrl.questionId')).getText()).toBe('question1');
+    it('should display the `questionId` detail page', function() {
+      expect(element(by.binding('$ctrl.question.title')).getText()).toBe('Question 1');
     });
 
   });

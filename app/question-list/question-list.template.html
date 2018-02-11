@@ -1,33 +1,40 @@
 <div class="container-fluid">
   <div class="row">
 
-    <!-- Sidebar -->
-    <div class="col-md-2">
-
-      <p>
-        Search:
-        <input ng-model="$ctrl.query">
-      </p>
-
-      <p>
-        Sort by:
-        <select ng-model="$ctrl.orderProp">
-          <option value="title">Alphabetical</option>
-          <option value="lastModified">Last modified</option>
-        </select>
-      </p>
-      
-    </div>
-
-    <!-- Question list -->
-    <div class="col-md-10">
-      <ul class="questions">
-        <li ng-repeat="question in $ctrl.questions | filter: { title: $ctrl.query } | orderBy: $ctrl.orderProp">
-          <a href="#!questions/{{question.id}}">{{question.title}}</a>
-          <p>{{question.lastModified}}</p>
-        </li>
-      </ul>
+    <div class="subheader col-md-12">
+      <div class="col-md-2">
+        <h3>Questions</h3>
+      </div>
+      <div class="col-md-offset-4 col-md-6">
+          <div class="form-inline">
+            <div class="form-group col-md-6">
+              <input class="form-control" ng-model="$ctrl.query" placeholder="Filter...">
+            </div>
+          
+            <div class="form-group col-md-2">
+              <select class="form-control" ng-model="$ctrl.orderProp">
+                  <option value="title">Alphabetical</option>
+                  <option value="-updatedAt">Last modified</option>
+                  <option value="-votes">Votes</option>
+                </select>
+            </div>
+          </div>
+      </div>
     </div>
 
   </div>
+
+  <div class="row">
+    <!-- Question list -->
+    <div class="questions col-md-12">
+      <ul>
+        <li ng-repeat="question in $ctrl.questions | filter: { title: $ctrl.query } | orderBy: $ctrl.orderProp">
+          <a href="#!questions/{{question._id}}">{{question.title}}</a>
+          <p>{{question.updatedAt | date:"MMM dd yyyy 'at' HH:mm"}}</p>
+        </li>
+      </ul>
+      <h4 ng-if="$ctrl.questions.length == 0">There is no question yet !</h4>
+    </div>
+  </div>
+
 </div>
